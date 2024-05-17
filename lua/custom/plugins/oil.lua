@@ -1,7 +1,7 @@
 return {
   'stevearc/oil.nvim',
   opts = {
-    columns = { "icon" }
+    columns = { 'icon' },
   },
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
 }
