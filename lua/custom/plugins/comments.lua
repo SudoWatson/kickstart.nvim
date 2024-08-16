@@ -3,5 +3,11 @@ return {
   'folke/todo-comments.nvim',
   event = 'VimEnter',
   dependencies = { 'nvim-lua/plenary.nvim' },
-  opts = { signs = false },
+  opts = {
+    signs = false,
+    pattern = [[\b(KEYWORDS)\b]],
+    search = {
+      pattern = [[\b(KEYWORDS)\b]],
+    },
+  },
 }
