@@ -1,6 +1,7 @@
 return {
   'TrevorS/uuid-nvim',
-  lazy = false,
+  -- lazy = false,
+  event = "VeryLazy",
   config = function()
     -- optional configuration
     local uuid = require('uuid-nvim')
