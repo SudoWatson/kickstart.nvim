@@ -126,6 +126,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- Remap for Coleman-DH
 vim.keymap.set('n', 'n', 'j')
 vim.keymap.set('n', 'e', 'k')
+vim.keymap.set('n', '<C-S-M-v>', '<C-v>')
 
 vim.keymap.set('v', 'n', 'j')
 vim.keymap.set('v', 'e', 'k')
