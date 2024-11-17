@@ -1,11 +1,20 @@
-return { -- You can easily change to a different colorscheme.
-  -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  'folke/tokyonight.nvim',
-  priority = 1000, -- Make sure to load this before all the other start plugins.
-  init = function()
-    vim.cmd.colorscheme 'tokyonight-night'
+return {
+  {
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+    'folke/tokyonight.nvim',
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
 
-    -- You can configure highlights by doing something like:
-    vim.cmd.hi 'Comment gui=none'
-  end,
+    config = function()
+      require("catppuccin").setup({
+        integrations = {
+          leap = true,
+        },
+      })
+      vim.cmd.colorscheme "catppuccin-mocha"
+    end
+  }
 }
