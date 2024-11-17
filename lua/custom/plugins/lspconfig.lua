@@ -145,6 +145,7 @@ return { -- LSP Configuration & Plugins
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       tsserver = {},
+      clangd = {},
       --
       csharp_ls = {},
 
@@ -164,6 +165,10 @@ return { -- LSP Configuration & Plugins
       },
     }
 
+    local daps = {
+      codelldb = {},
+    }
+
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run
@@ -172,9 +177,17 @@ return { -- LSP Configuration & Plugins
     --  You can press `g?` for help in this menu.
     require('mason').setup()
 
+
+    function TableConcat(t1,t2)
+      for i=1,#t2 do
+        t1[#t1+1] = t2[i]
+      end
+      return t1
+    end
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
+    TableConcat(ensure_installed, vim.tbl_keys(daps or {}))
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
     })
