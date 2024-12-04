@@ -34,6 +34,7 @@ vim.g.have_nerd_font = true
 -- [[ Setting options ]]
 
 vim.opt.fileformat = 'dos'
+vim.opt.fixendofline = false
 
 -- Make line numbers default
 vim.opt.number = true
